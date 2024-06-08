@@ -11,15 +11,19 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
   const HeaderLayout = () => {
     return (
-      <>
-        <Aside/>
-        <Header />
-        <Outlet />
-      </>
-    )
+      <div className="layout">
+        <Aside />
+        <div className="main-content">
+          <Header />
+          <div className="content">
+            <Outlet />
+          </div>
+          <Footer />
+        </div>
+      </div>
+    );
   }
 
   return (

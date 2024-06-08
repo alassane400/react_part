@@ -116,7 +116,7 @@ const SignIn = () => {
                         required="required"
                     />
                 </div>
-                <div>
+                <div className="form-footer">
                     <input
                         className="submitButton"
                         type="submit"
