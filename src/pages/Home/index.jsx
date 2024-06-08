@@ -1,4 +1,5 @@
 import "./home.css"
+import data from "../../data/data.json"
 import getdate from "../../utils/getDate.js";
 import { useEffect, useState } from "react";
 
