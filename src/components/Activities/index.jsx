@@ -1,58 +1,46 @@
-import "./activities.css"
+import { useState } from "react";
+import Activity from "../Activity";
+import Task from "../Task";
+import "./activities.css";
 
-const Activities = ({category}) => {
+const Activities = ({ category }) => {
+  const [selectedActivity, setSelectedActivity] = useState(null);
+
+  const handleActivityClick = (activity) => {
+    setSelectedActivity(activity);
+  };
+
+  // Helper function to generate empty activities
+  const makeEmptyActivities = (num) => {
+    return Array.from({ length: num }, (_, index) => (
+      <Activity key={`empty-${index}`} activity={null} onClick={() => {}} />
+    ));
+  };
+
+  // Calculate the number of empty activities needed
+  const activitiesToDisplay = [
+    ...category.activity,
+    ...makeEmptyActivities(Math.max(0, 3 - category.activity.length))
+  ];
   return (
-    <div className="past">
+<div className="past">
     <div className="card-title">
       <p>{category.title}</p>
     </div>
-     {category.activity.map((item)=> >(
-
-     ))}
-    <div className="activite">
-      <p>Activite Test</p>
-    </div>
-    <div className="activite mute">
-      <p></p>
-    </div>
-    <div className="activite mute">
-      <p></p>
-    </div>
-    <div className="tasks">
-      <div className="task-title">
-        <p>Tasks</p>
+      <div className="activities">
+        {activitiesToDisplay.map((item, index) => (
+          <Activity
+            key={index}
+            activity={item}
+            onClick={() => handleActivityClick(item)}
+          />
+        ))}
       </div>
-      <div className="task-list">
-        <ul>
-          <li className="task-item">
-            <label htmlFor="t1">
-              T1
-            </label>
-            <input type="checkbox" name="task" id="t1"/>
-          </li>
-          <li className="task-item">
-            <label htmlFor="t1">
-              T2
-            </label>
-            <input type="checkbox" name="task" id="t1"/>
-          </li>
-          <li className="task-item">
-            <label htmlFor="t1">
-              T3
-            </label>
-            <input type="checkbox" name="task" id="t1"/>
-          </li>
-          <li className="task-item">
-            <label htmlFor="t1">
-              T4
-            </label>
-            <input type="checkbox" name="task" id="t1"/>
-          </li>
-        </ul>
+      <div className="tasks">
+        {selectedActivity && <Task activity={selectedActivity} />}
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default Activities
+export default Activities;

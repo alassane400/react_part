@@ -1,18 +1,20 @@
-import { useState } from "react"
-import "./activity.css"
+import { useState, useEffect } from "react";
+import "./activity.css";
 
-const Activity = ({activity}) => {
+const Activity = ({ activity, onClick }) => {
+  const [isActive, setIsActive] = useState(false);
 
-  const [isActive, setIsActive]= useState(false)
-  if (activity !== undefined){setIsActive(true)}
+  useEffect(() => {
+    if (activity !== undefined) {
+      setIsActive(true);
+    }
+  }, [activity]);
+
   return (
-    <div
-          className={({ isActive }) =>
-    isActive ? "activite" : "activite mute"
-    }>
-    <p>{activity.name}</p>
-  </div>
-  )
-}
+    <div className={isActive ? "activite" : "activite mute"} onClick={onClick}>
+      <p>{activity.name}</p>
+    </div>
+  );
+};
 
-export default Activity
+export default Activity;
