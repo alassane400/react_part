@@ -42,5 +42,86 @@
           "title": "In coming",
           "activity": []
       }
+  ],
+
+  "vote": [
+    {
+      "title": "Vote Information",
+      "activity": [
+        {
+          "theme": "",
+          "created-at": "",
+          "available-until": ""
+        }
+      ],
+      "rounds": [
+        {
+          "id": "1",
+          "title": "Round 1",
+          "question": "",
+          "choice": [
+            {
+              "id": "1",
+              "title": "Choix 1",
+              "checked": "unchecked"
+            },
+            {
+              "id": "2",
+              "title": "Choix 2",
+              "checked": "checked"
+            },
+            {
+              "id": "3",
+              "title": "Choix 3",
+              "checked": "unchecked"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Round 2",
+          "question": "",
+          "choice": [
+            {
+              "id": "1",
+              "title": "Choix 1",
+              "checked": "unchecked"
+            },
+            {
+              "id": "2",
+              "title": "Choix 2",
+              "checked": "checked"
+            },
+            {
+              "id": "3",
+              "title": "Choix 3",
+              "checked": "unchecked"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Round 3",
+          "question": "",
+          "choice": [
+            {
+              "id": "1",
+              "title": "Choix 1",
+              "checked": "unchecked"
+            },
+            {
+              "id": "2",
+              "title": "Choix 2",
+              "checked": "checked"
+            },
+            {
+              "id": "3",
+              "title": "Choix 3",
+              "checked": "unchecked"
+            }
+          ]
+        }
+      ]
+      }
   ]
 }
