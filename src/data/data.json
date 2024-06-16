@@ -1,57 +1,58 @@
 {
   "categories": [
-      {
-          "title": "Past",
-          "activity": [
-              {
-                  "name": "Activite Test",
-                  "tasks": [
-                      {
-                          "name": "T1"
-                      },
-                      {
-                          "name": "T2"
-                      },
-                      {
-                          "name": "T3"
-                      },
-                      {
-                          "name": "T4"
-                      }
-                  ]
-              }
+    {
+      "title": "Past",
+      "activity": [
+        {
+          "name": "Activite Test",
+          "tasks": [
+            {
+              "name": "T1"
+            },
+            {
+              "name": "T2"
+            },
+            {
+              "name": "T3"
+            },
+            {
+              "name": "T4"
+            }
           ]
-      },
-      {
-          "title": "To do",
-          "activity": [
-              {
-                  "name": "Organisation repas",
-                  "tasks": [
-                      {
-                          "name": "T1"
-                      },
-                      {
-                          "name": "T2"
-                      }
-                  ]
-              }
+        }
+      ]
+    },
+    {
+      "title": "To do",
+      "activity": [
+        {
+          "name": "Organisation repas",
+          "tasks": [
+            {
+              "name": "T1"
+            },
+            {
+              "name": "T2"
+            }
           ]
-      },
-      {
-          "title": "In coming",
-          "activity": []
-      }
+        }
+      ]
+    },
+    {
+      "title": "In coming",
+      "activity": []
+    }
   ],
 
-  "vote": [
+  "votes": [
     {
+      "id": "1",
       "title": "Vote Information",
       "activity": [
         {
           "theme": "",
-          "created-at": "",
-          "available-until": ""
+          "createdAt": "",
+          "availableUntil": ""
         }
       ],
       "rounds": [
@@ -122,6 +123,6 @@
           ]
         }
       ]
-      }
+    }
   ]
 }
