@@ -1,0 +1,120 @@
+.vote-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.today {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f39713;
+}
+
+.today-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f39713;
+}
+
+.vote-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.vote-left {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 30%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+}
+
+.vote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 366px;
+  height: 97px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f39713;
+  margin: 10px;
+}
+
+.round {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 384px;
+  height: 66px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.vote-right {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 70%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.vote-informations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 98%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.information-title {
+  width: 98%;
+  font-weight: bold;
+  background-color: #f39713;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.vote-informations ul {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 10px;
+  padding-left: 5px;
+  list-style-type: none;
+  padding: 10px;
+  width: 290px;
+}
+
+.vote-informations ul li {
+  margin: 0 5px;
+  width: 90%;
+}
+
+.vote-round {
+  width: 98%;
+  font-weight: bold;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}

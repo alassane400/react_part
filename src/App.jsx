@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from "./pages/Home";
+import Vote from "./pages/Vote";
 import DocumentAdmin from "./pages/Document/index.jsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -44,6 +45,7 @@ function App() {
         <Route element={<HeaderLayout />}>
           <Route path="/admin/Document" element={<DocumentAdmin />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/vote" element={<Vote />} />
         </Route>
       </Routes>
       <ToastContainer
