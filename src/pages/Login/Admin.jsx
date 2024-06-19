@@ -4,14 +4,20 @@ import logo from "/image/logo.png"
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import api from '.../api';
 
-const SignIn = () => {
+const LogInAdmin = () => {
 
   const text="Companion"
   const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate("/home");
+    }
     let timeout;
     if (index < text.length) {
       timeout = setTimeout(() => {
@@ -33,9 +39,13 @@ const SignIn = () => {
 
   const [password, setPassword]=useState("")
 
-  const VITE_URL_API = import.meta.env.VITE_URL_API;
+  const [key, setKey]=useState("")
 
-    let navigate = useNavigate();
+
+  const VITE_URL_API = import.meta.env.VITE_URL_API;
+  // const LOCALHOST_API=import.meta.env.LOCALHOST_API;
+
+  let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,7 +55,7 @@ const SignIn = () => {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `${VITE_URL_API}/users/signIn`,
+        url: `http://localhost:3000/admin/login`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -55,12 +65,14 @@ const SignIn = () => {
     axios.request(config)
         .then((response) => {
             if (response.status === 200) {
-                console.log("Response succeeded!");
+                console.log(response.data);
+                console.log(response.data.token);
                 setEmail("");
                 setPassword("");
-                toast.success("Connecté");
+                toast.success("Enregistré");
+                localStorage.setItem('token', response.data.token);
                 setTimeout(() => {
-                    navigate("/");
+                    navigate("/home");
                 }, 3000);
             }
         })
@@ -83,7 +95,7 @@ const SignIn = () => {
       </div>
       </div>
       <div className="signin-right col">
-      <h1 className="signin-right-title">Connection</h1>
+      <h1 className="signin-right-title">Connexion</h1>
 
       <form className="formGroup" onSubmit={handleSubmit}>
                 <div className="inputGroup">
@@ -116,11 +128,29 @@ const SignIn = () => {
                         required="required"
                     />
                 </div>
+                {/* <div className="inputGroup">
+                    <label className="form-label mt-4" htmlFor="password">Key</label>
+                    <input
+                        id="key"
+                        aria-label="Enter Status Key"
+                        className="form-control"
+                        type="password"
+                        name="key"
+                        placeholder="Enter Status Key"
+                        onChange={(e) => {
+                            setKey(e.target.value);
+                        }}
+                        required="required"
+                    />
+                </div> */}
                 <div className="form-footer">
                     <input
                         className="submitButton"
                         type="submit"
                         aria-label="Se connecter" />
+                </div><br></br>
+                <div className="form-footer2">
+                  <Link to="/admin/signUp">Create a new admin account</Link>
                 </div>
             </form >
       </div>
@@ -128,4 +158,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default LogInAdmin
