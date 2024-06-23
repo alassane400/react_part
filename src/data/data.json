@@ -64,17 +64,20 @@
             {
               "id": "1",
               "title": "Choix 1",
-              "checked": "unchecked"
+              "checked": "unchecked",
+              "result": "10"
             },
             {
               "id": "2",
               "title": "Choix 2",
-              "checked": "checked"
+              "checked": "checked",
+              "result": "20"
             },
             {
               "id": "3",
               "title": "Choix 3",
-              "checked": "unchecked"
+              "checked": "unchecked",
+              "result": "30"
             }
           ]
         },
@@ -86,17 +89,20 @@
             {
               "id": "1",
               "title": "Choix 1",
-              "checked": "unchecked"
+              "checked": "unchecked",
+              "result": "10"
             },
             {
               "id": "2",
               "title": "Choix 2",
-              "checked": "checked"
+              "checked": "checked",
+              "result": "60"
             },
             {
               "id": "3",
               "title": "Choix 3",
-              "checked": "unchecked"
+              "checked": "unchecked",
+              "result": "90"
             }
           ]
         },
@@ -108,17 +114,20 @@
             {
               "id": "1",
               "title": "Choix 1",
-              "checked": "unchecked"
+              "checked": "unchecked",
+              "result": "30"
             },
             {
               "id": "2",
               "title": "Choix 2",
-              "checked": "checked"
+              "checked": "checked",
+              "result": "40"
             },
             {
               "id": "3",
               "title": "Choix 3",
-              "checked": "unchecked"
+              "checked": "unchecked",
+              "result": "70"
             }
           ]
         }

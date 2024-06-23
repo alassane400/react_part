@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
-import "./vote.css";
+import "./result.css";
 import data from "../../data/data.json";
 import getdate from "../../utils/getDate.js";
-import Round from "../../components/Round/index.jsx";
+import Chart from "../../components/Chart/index.jsx";
 
-const Vote = () => {
-  const vote1 = data.votes[0];
+const Result = () => {
+  const vote = data.votes[0];
   const [today, setToday] = useState();
+
   useEffect(() => {
     setToday(getdate());
   }, []);
-  const [selectRound, setSelectedRound] = useState(vote1.rounds[0]);
+  const [selectRound, setSelectedRound] = useState(vote.rounds[0]);
 
   const handleSelectRound = (id) => {
-    setSelectedRound(vote1.rounds[id - 1]);
+    setSelectedRound(vote.rounds[id - 1]);
   };
 
   return (
@@ -42,13 +43,23 @@ const Vote = () => {
               <p>Vote informations</p>
             </div>
             <ul>
-              <li>Theme: {vote1.activity.theme}</li>
-              <li>Created at: {vote1.activity.createdAt}</li>
-              <li>Available until: {vote1.activity.availableUntil}</li>
+              <li>Result: </li>
             </ul>
           </div>
-          <div className="vote-round">
-            <Round round={selectRound} />
+          <div className="result-container">
+            <div className="information-title result">
+              <p>{selectRound.title}</p>
+            </div>
+            <div className="vote-round left">
+              <Chart round={selectRound} />
+            </div>
+            <div className="vote-round right">
+              <ul>
+                <li>Choice 1 : {selectRound.choice[0].result} votes</li>
+                <li>Choice 2 : {selectRound.choice[1].result} votes</li>
+                <li>Choice 3 : {selectRound.choice[2].result} votes</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -56,4 +67,4 @@ const Vote = () => {
   );
 };
 
-export default Vote;
+export default Result;

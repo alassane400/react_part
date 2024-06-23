@@ -10,6 +10,7 @@ import SignIn from "./pages/SignIn";
 import Aside from "./components/Aside";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Result from "./pages/Result";
 
 function App() {
   const HeaderLayout = () => {
@@ -34,6 +35,7 @@ function App() {
         <Route element={<HeaderLayout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/vote" element={<Vote />} />
+          <Route path="/result" element={<Result/>}/>
         </Route>
       </Routes>
       <Footer />
