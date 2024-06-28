@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import "./signin.css"
 import logo from "/image/logo.png"
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
+import UserContext from "../../context/userProvider";
+
+
 
 const SignIn = () => {
+  const { setLogged, setUserData, setToken } = useContext(UserContext);
 
   const text="Companion"
   const [displayedText, setDisplayedText] = useState('');
@@ -45,7 +49,7 @@ const SignIn = () => {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `${VITE_URL_API}/users/signIn`,
+        url: `${VITE_URL_API}/login`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -59,6 +63,14 @@ const SignIn = () => {
                 setEmail("");
                 setPassword("");
                 toast.success("Connecté");
+                let user={
+                  email:response.data.other.email,
+                  name:response.data.other.name,
+                  description:response.data.other.description
+                }
+                setUserData(user);
+                setToken(response.data.token);
+                console.log(response);
                 setTimeout(() => {
                     navigate("/");
                 }, 3000);

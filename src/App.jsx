@@ -11,6 +11,8 @@ import Aside from "./components/Aside";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Result from "./pages/Result";
+import { UserProvider } from "./context/userProvider";
+import Payment from "./pages/Payment";
 
 function App() {
   const HeaderLayout = () => {
@@ -30,15 +32,19 @@ function App() {
 
   return (
     <Router>
+      <UserProvider>
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route element={<HeaderLayout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/vote" element={<Vote />} />
           <Route path="/result" element={<Result/>}/>
+          <Route path="/payment" element={<Payment/>}/>
+          <Route path="/file" element={<File/>}/>
         </Route>
       </Routes>
       <Footer />
+      </UserProvider>
       <ToastContainer
         position="top-center"
         autoClose={1000}
