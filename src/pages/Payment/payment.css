@@ -1,0 +1,171 @@
+.payment-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.payment-left{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 30%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+}
+
+.payment{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 366px;
+  height: 97px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f39713;
+  margin: 10px;
+}
+.month{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 384px;
+  height: 66px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.payment-right{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 70%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.payment-infos{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 98%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  padding: 10px;
+  height: 334px;
+}
+
+.payment-info-title{
+  width: 98%;
+  font-weight: bold;
+  background-color: #f39713;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+.payment-info-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-container-left{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-left-sup{
+  height: 94px;
+}
+
+.info-left-inf{
+  height: 94px;
+}
+
+.info-container-right{
+  width: 164px;
+  height: 188px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.info-right-sup{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.info-right-sup p{
+  font-size: 128px;
+  color: #f39713;
+}
+
+.info-right-inf{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 40px;
+}
+
+.account-info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 98%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.account-info-title{
+  width: 98%;
+  font-weight: bold;
+  background-color: #f39713;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.account-iban{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 98%;
+  padding: 10px;
+}
+
+.account-iban-sup{
+  height: 60px;
+  width: 98%;
+}
+
+.account-iban-inf{
+  height: 60px;
+  width: 98%;
+}
+
+.drop-file-btn{
+  display: flex;
+  background-color: #f39713;
+  border-radius: 10px;
+  width: 140px;
+  height: 62px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 80px;
+}

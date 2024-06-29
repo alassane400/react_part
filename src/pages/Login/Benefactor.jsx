@@ -1,13 +1,22 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import "./signin.css"
 import logo from "/image/logo.png"
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
+// <<<<<<< HEAD:src/pages/Login/Benefactor.jsx
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // import api from '.../api';
 
 const LogInBenefactor = () => {
+// =======
+// import UserContext from "../../context/userProvider";
+
+
+
+// const SignIn = () => {
+//   const { setLogged, setUserData, setToken } = useContext(UserContext);
+// >>>>>>> c994e0a0bc76902fcc13ec9e20dec62fc4b4b2ba:src/pages/SignIn/index.jsx
 
   const text="Companion"
   const [displayedText, setDisplayedText] = useState('');
@@ -52,7 +61,11 @@ const LogInBenefactor = () => {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
+// <<<<<<< HEAD:src/pages/Login/Benefactor.jsx
         url: `http://localhost:3000/benefactor/login`,
+// =======
+//         url: `${VITE_URL_API}/login`,
+// >>>>>>> c994e0a0bc76902fcc13ec9e20dec62fc4b4b2ba:src/pages/SignIn/index.jsx
         headers: {
             'Content-Type': 'application/json'
         },
@@ -66,8 +79,19 @@ const LogInBenefactor = () => {
                 console.log(response.data.token);
                 setEmail("");
                 setPassword("");
+// <<<<<<< HEAD:src/pages/Login/Benefactor.jsx
                 toast.success("Enregistré");
                 localStorage.setItem('token', response.data.token);
+// =======
+                // toast.success("Connecté");
+                // let user={
+                //   email:response.data.other.email,
+                //   name:response.data.other.name,
+                //   description:response.data.other.description
+                // }
+                // setUserData(user);
+                // setToken(response.data.token);
+                // console.log(response);
                 setTimeout(() => {
                     navigate("/home");
                 }, 3000);

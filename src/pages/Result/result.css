@@ -1,0 +1,25 @@
+.result-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.left {
+  width: 60%;
+}
+.right {
+  width: 30%;
+}
+
+.right ul {
+  padding: 10px;
+  margin-top: 40px;
+}
+.right li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.result {
+  width: 100%;
+}

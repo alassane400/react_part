@@ -1,30 +1,18 @@
-.vote-content {
+.admin_file-content{
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
 }
 
-.today {
-  font-size: 24px;
-  font-weight: bold;
-  color: #f39713;
-}
-
-.today-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #f39713;
-}
-
-.vote-body {
+.admin_file-body{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
 }
 
-.vote-left {
+.admin_file-left{
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -32,27 +20,31 @@
   width: 30%;
   border: 1px solid rgb(196, 196, 196);
   border-radius: 10px;
+  height: 92vh;
+  margin-top: 10px;
 }
 
-.vote {
+.dropped{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 366px;
-  height: 70px;
+  height: 97px;
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
   background-color: #f39713;
   margin: 10px;
+  font-size: 24px;
 }
 
-.round {
+.blank{
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  align-items: center;
+  width: 384px;
+  height: 66px;
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
@@ -60,40 +52,48 @@
   cursor: pointer;
 }
 
-.vote-right {
+.admin_file-right{
+  flex-direction: column;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   width: 70%;
   border: 1px solid rgb(196, 196, 196);
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  box-sizing: border-box;
 }
 
-.vote-informations {
+.admin_file-informations{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 50%; /* Prend la moitié gauche */
-  box-sizing: border-box;
+  justify-content: flex-start;
+  width: 98%;
   border: 1px solid rgb(196, 196, 196);
   border-radius: 10px;
+  height: 336px;
   padding: 10px;
 }
 
-.information-title {
-  width: 100%;
+.admin-informations-title{
+  width: 98%;
   font-weight: bold;
   background-color: #f39713;
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
+  height: 97px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.vote-informations ul {
+.admin-informations-title p{
+  font-size: 24px;
+}
+
+.admin-informations-content ul{
   margin-block-start: 0em;
   margin-block-end: 0em;
   margin-inline-start: 0px;
@@ -103,77 +103,66 @@
   list-style-type: none;
   padding: 10px;
   width: 290px;
+  font-size: 24px;
 }
 
-.vote-informations ul li {
-  margin: 0 5px;
-  width: 90%;
-}
-
-.vote-round {
+.admin_file-add-one{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   width: 98%;
-  font-weight: bold;
   border: 1px solid rgb(196, 196, 196);
   border-radius: 10px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 97px;
+  height: 336px;
 }
 
-.round {
-  width: 95%;
-  font-weight: bold;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 10px;
-  display: inline-block
-}
-
-
-.vote-right {
-  display: flex;
-  width: 100%;
-  height: 100%; /* Ensure it takes the full height */
-  box-sizing: border-box; /* Ensure padding and borders are included in the width */
-}
-
-.vote-right > div {
-  width: 50%;
-  box-sizing: border-box; /* Ensure padding is included in the width */
-}
-
-.information-title {
-  width: 100%;
+.admin-add-one-title{
+  width: 98%;
   font-weight: bold;
   background-color: #f39713;
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
-}
-
-.vote-informations {
+  height: 97px;
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  padding: 10px;
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  justify-content: center;
 }
 
-.vote-informations ul {
+.admin-add-one-title p{
+  font-size: 24px;
+}
+
+.admin-add-one-content ul{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 10px;
+  padding-left: 5px;
   list-style-type: none;
   padding: 10px;
-  width: 100%;
+  font-size: 24px;
 }
 
-.vote-informations ul li {
-  margin: 5px 0;
-  width: 100%;
+.drop-admin-page{
+  display: flex;
+  justify-content: flex-end;
+  width:100%;
 }
 
-.vote-round {
-  width: 100%;
-  font-weight: bold;
-  border: 1px solid rgb(196, 196, 196);
+.dropButton{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 1px solid black;
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 20px;
+  background-color: #f39713;
+  cursor: pointer;
+  width: 288px;
+  height: 62px;
+  font-size: 24px;
 }
