@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import data from "../../data/data.json";
 import getdate from "../../utils/getDate.js";
+import "./admin_home.css";
 
 const Admin_home = () => {
   const [today, setToday] = useState();
@@ -54,7 +55,7 @@ const Admin_home = () => {
             <div className="admin-card-left">
               <p>Contributors</p>
             </div>
-            <div className="admin-card-mid">
+            <div className="admin-card-end">
               <p>02</p>
             </div>
           </div>

@@ -46,7 +46,7 @@ const Payment = () => {
                   <div className="info-left-inf"> <p> Paiement of service : </p> </div>
                 </div>
                 <div className="info-container-right">
-                  <div className="info-right-sup"></div>
+                  <div className="info-right-sup"><p>0</p></div>
                   <div className="info-right-inf"> <p>€</p></div>
                 </div>
               </div>

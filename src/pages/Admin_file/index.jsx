@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import data from "../../data/data.json";
 import getdate from "../../utils/getDate.js";
+import "./admin_file.css";
 
 const Admin_file = () => {
   const [today, setToday] = useState();
@@ -41,7 +42,7 @@ const Admin_file = () => {
             <div className="admin-add-one-title">
               <p>Add one</p>
             </div>
-            <div className="amin-add-one-content">
+            <div className="admin-add-one-content">
               <ul>
                 <li>Description : </li>
                 <li>MatriculeBe : </li>
@@ -49,9 +50,9 @@ const Admin_file = () => {
               </ul>
             </div>
             <div className="drop-admin-page">
-              <input
+              <button
               className= "dropButton"
-              type="Drop it" />
+              type="Drop it"> Drop it</button>
             </div>
           </div>
         </div>

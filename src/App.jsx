@@ -13,6 +13,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Result from "./pages/Result";
 import { UserProvider } from "./context/userProvider";
 import Payment from "./pages/Payment";
+import Admin_file from "./pages/Admin_file";
+import Admin_home from "./pages/Admin_home";
 
 function App() {
   const HeaderLayout = () => {
@@ -40,10 +42,10 @@ function App() {
           <Route path="/vote" element={<Vote />} />
           <Route path="/result" element={<Result/>}/>
           <Route path="/payment" element={<Payment/>}/>
-          <Route path="/file" element={<File/>}/>
+          <Route path="/admin_home" element={<Admin_home/>}/>
+          <Route path="/admin_file" element={<Admin_file/>}/>
         </Route>
       </Routes>
-      <Footer />
       </UserProvider>
       <ToastContainer
         position="top-center"
