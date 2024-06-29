@@ -115,21 +115,35 @@ const Document = () => {
       <div style={{margin:"25px"}}>
         <div style={{borderColor:'orange', borderWidth:'2px', borderStyle: 'solid', width:'50%', borderRadius:'8px', padding:'10px'}}>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="file"><b>Upload :</b></label>
+            <label htmlFor="file"><b>Description :</b></label>
             <input
-              id="file"
+              id="description"
               className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-              aria-label="Enter file"
-              type="file"
-              name="file"
-              placeholder="Enter file"
+              aria-label="Enter a description"
+              type="text"
+              name="description"
+              placeholder="Enter a description"
               onChange={(e) => {
-                setFile(e.target.files[0]);
+                  setDescription(e.target.value);
               }}
-              required
+              required="required"
               style={{marginRight: '10px' }}
             />
             <br />
+            <label htmlFor="file"><b>Amount :</b></label>
+            <input
+              id="amount"
+              className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              aria-label="Enter an amount"
+              type="number"
+              name="amount"
+              placeholder="Enter an amount"
+              onChange={(e) => {
+                  setAmount(e.target.value);
+              }}
+              required="required"
+              style={{marginRight: '10px' }}
+            /><br></br>
             <div style={{borderColor:'orange', borderWidth:'2px', borderRadius:'3px',textAlign:'center',color:'white',backgroundColor:'orange'}}>
               <input
                 type="submit"

@@ -62,11 +62,11 @@ const LogIn = () => {
     axios.request(config)
         .then((response) => {
             if (response.status === 200) {
-                console.log(response.data);
-                console.log(response.data.token);
+                // console.log(response.data);
+                // console.log(response.data.token);
                 setEmail("");
                 setPassword("");
-                toast.success("Connecté");
+                toast.success("Connected");
                 localStorage.setItem('token', response.data.token);
                 setTimeout(() => {
                     navigate("/home");
@@ -74,10 +74,7 @@ const LogIn = () => {
             }
         })
         .catch((error) => {
-            // const errorMessage = error.response?.data?.message ||
-            // 'An error occurred';
-            console.log(error.message.data)
-            // toast.error(errorMessage);
+            toast.error("User not found");
         }
         )
 }

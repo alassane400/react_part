@@ -12,12 +12,13 @@ const Aside = () => {
 
 
     <NavLink
-    to="/"
+    to="/document"
     className={({ isActive }) =>
     isActive ? "active" : ""
     }>
     <div className="aside-center"><img src="image/logo-doc.png" alt="doc" /></div>
     </NavLink>
+    
 
     <NavLink
     to="/"
@@ -27,7 +28,7 @@ const Aside = () => {
     <div className="aside-center"><img src="image/logo-calendar.png" alt="calendar" /></div>
     </NavLink>
 
-    <NavLink to="/"
+    <NavLink to="/expenditure"
     className={({ isActive }) =>
     isActive ? "active" : ""
     }>
