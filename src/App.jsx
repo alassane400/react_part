@@ -15,6 +15,8 @@ import { UserProvider } from "./context/userProvider";
 import Payment from "./pages/Payment";
 import Admin_file from "./pages/Admin_file";
 import Admin_home from "./pages/Admin_home";
+import Admin_membergestion from "./pages/Admin_membergestion";
+
 
 function App() {
   const HeaderLayout = () => {
@@ -44,6 +46,7 @@ function App() {
           <Route path="/payment" element={<Payment/>}/>
           <Route path="/admin_home" element={<Admin_home/>}/>
           <Route path="/admin_file" element={<Admin_file/>}/>
+          <Route path="/admin_membergestion" element={<Admin_membergestion/>}/>
         </Route>
       </Routes>
       </UserProvider>
