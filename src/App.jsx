@@ -16,6 +16,9 @@ import Payment from "./pages/Payment";
 import Admin_file from "./pages/Admin_file";
 import Admin_home from "./pages/Admin_home";
 import Admin_membergestion from "./pages/Admin_membergestion";
+import Planning from "./pages/Planning";
+import Edit_user from "./pages/Edit_user";
+import MyCalendar from "./pages/MyCalendar";
 
 
 function App() {
@@ -47,6 +50,9 @@ function App() {
           <Route path="/admin_home" element={<Admin_home/>}/>
           <Route path="/admin_file" element={<Admin_file/>}/>
           <Route path="/admin_membergestion" element={<Admin_membergestion/>}/>
+          <Route path="/planning" element={<Planning/>}/>
+          <Route path="/edit_user" element={<Edit_user/>}/>
+          <Route path="/mycalendar" element={<MyCalendar/>}/>
         </Route>
       </Routes>
       </UserProvider>

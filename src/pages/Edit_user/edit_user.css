@@ -1,0 +1,48 @@
+.edit{
+  width: 700px;
+  margin: 80px auto;
+  display:flex;
+  align-items: center;
+}
+
+.signin-right-title{
+  color: #F39713;
+  font-size: 48px;
+}
+
+.form-control{
+  width: 615px;
+  height: 64px;
+}
+
+.edit-center{
+  margin: 0 auto;
+}
+.submitButton{
+  width: 258px;
+  height: 70px;
+  background-color: #F39713;
+  color: #FFFFFF;
+  cursor:pointer;
+  border-radius: 10px;
+  border: 0;
+  margin-top: 30px;
+}
+
+.submitButton:hover{
+  background-color: #dea24d;
+  color: black;
+}
+
+.form-footer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.form-footer2{
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  padding-right: 20px;
+  margin-top: 30px;
+}
