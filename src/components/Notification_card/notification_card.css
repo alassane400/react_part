@@ -1,0 +1,29 @@
+.notification_card_container{
+  width:800px;
+  height: 115px;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(226, 219, 219);
+}
+
+.notification_card_header{
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid grey;
+  height: 40px;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notification_card_body{
+  width: 100%;
+  background-color: white;
+  height: 65px;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  display: flex;
+}

@@ -4,7 +4,7 @@ import "./aside.css"
 const Aside = () => {
   return (
     <div className="aside">
-    <NavLink to="/" className={({ isActive }) =>
+    <NavLink to="/home" className={({ isActive }) =>
     isActive ? "active" : ""
     }>
     <div className="aside-logo"><img src="image/logo.png" alt="logo" /></div>

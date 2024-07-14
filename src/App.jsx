@@ -19,6 +19,7 @@ import Admin_membergestion from "./pages/Admin_membergestion";
 import Planning from "./pages/Planning";
 import Edit_user from "./pages/Edit_user";
 import MyCalendar from "./pages/MyCalendar";
+import Notification from "./pages/Notifications";
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/planning" element={<Planning/>}/>
           <Route path="/edit_user" element={<Edit_user/>}/>
           <Route path="/mycalendar" element={<MyCalendar/>}/>
+          <Route path="/notification" element={<Notification/>}/>
         </Route>
       </Routes>
       </UserProvider>

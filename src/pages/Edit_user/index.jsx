@@ -51,48 +51,91 @@ const EditUser= () => {
 }
 
   return (
-    <div className="container edit row">
+    <div className="container row edit-wrap">
+      <div className="profile-left">
+        <div className="profile-image">
+          <img src="/image/logo-avatar.png" alt="Profile Image" />
+        </div>
+        <div className="profile-info">
+          <h2> DURAND Jean </h2>
+          <p> jean.durand@email.com</p>
+        </div>
+      </div>
+      <div className="profile-right">
       <h1 className="signin-right-title">Edit Profile</h1>
 
-      <form className="formGroup edit-center" onSubmit={handleSubmit}>
-                <div className="inputGroup">
-                    <label className="form-label mt-4" htmlFor="email">Email</label>
-                    <input
-                        id="email"
-                        aria-label="Enter Email"
-                        className="form-control"
-                        type="email"
-                        name="email"
-                        value={user && user.email}
-                        onChange={(e) => {
-                            setEmail(e.target.value);
-                        }}
-                        required="required"
-                    />
-                </div>
-                <div className="inputGroup">
-                    <label className="form-label mt-4" htmlFor="password">Password</label>
-                    <input
-                        id="password"
-                        aria-label="Enter Password"
-                        className="form-control"
-                        type="password"
-                        name="password"
-                        placeholder="Enter actual Password or New one"
-                        onChange={(e) => {
-                            setPassword(e.target.value);
-                        }}
-                        required="required"
-                    />
-                </div>
-                <div className="form-footer">
-                    <input
-                        className="submitButton"
-                        type="submit"
-                        aria-label="Valider" />
-                </div><br></br>
-            </form >
+       <form className="formGroup edit-center" onSubmit={handleSubmit}>
+          <div className="inputGroup">
+              <label className="form-label mt-4" htmlFor="name">Name</label>
+              <input
+                  id="name"
+                  aria-label="Enter Name"
+                  className="form-control"
+                  type="name"
+                  name="name"
+                  value={user && user.name}
+                  onChange={(e) => {
+                      setEmail(e.target.value);
+                  }}
+                  required="required"
+              />
+          </div>
+          <div className="inputGroup">
+              <label className="form-label mt-4" htmlFor="email">Email</label>
+              <input
+                  id="email"
+                  aria-label="Enter Email"
+                  className="form-control"
+                  type="email"
+                  name="email"
+                  value={user && user.email}
+                  placeholder="Enter your email"
+                  onChange={(e) => {
+                      setEmail(e.target.value);
+                  }}
+                  required="required"
+              />
+          </div>
+          <div className="inputGroup">
+              <label className="form-label mt-4" htmlFor="password">Password</label>
+              <input
+                  id="password"
+                  aria-label="Enter Password"
+                  className="form-control"
+                  type="password"
+                  name="password"
+                  placeholder="Enter your actual password or a new one"
+                  onChange={(e) => {
+                      setPassword(e.target.value);
+                  }}
+                  required="required"
+              />
+          </div>
+          <div className="inputGroup">
+              <label className="form-label mt-4" htmlFor="skills">Skills</label>
+              <input
+                  id="skill"
+                  aria-label="Enter your skills"
+                  className="form-control"
+                  type="skill"
+                  name="skill"
+                  value={user && user.skill}
+                  placeholder="Enter your skills"
+                  onChange={(e) => {
+                      setEmail(e.target.value);
+                  }}
+                  required="required"
+              />
+          </div>
+          <div className="form-footer">
+              <input
+                  className="submitButton"
+                  type="submit"
+                  aria-label="Valider" />
+          </div><br></br>
+      </form >
       </div>
+    </div>
   )
 }
 
