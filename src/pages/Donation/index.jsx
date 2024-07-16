@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import getdate from "../../utils/getDate.js";
 
-const Expenditure = () => {
+const Donation = () => {
   const text = "Companion";
   const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
@@ -15,35 +15,35 @@ const Expenditure = () => {
   const [amount, setAmount] = useState("");
   const [expenses, setExpenses] = useState([]);
 
-  const fetchExpenditures = async () => {
-    let token = localStorage.getItem('token');
-    if (!token) {
-        navigate("/admin");
-        return;
-    }
+  // const fetchExpenditures = async () => {
+  //   let token = localStorage.getItem('token');
+  //   if (!token) {
+  //       navigate("/admin");
+  //       return;
+  //   }
 
-    try {
-      const response = await axios.get('http://localhost:3000/expenditures', {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
-      });
+  //   try {
+  //     const response = await axios.get('http://localhost:3000/expenditures', {
+  //       headers: {
+  //         'Authorization': `Bearer ${token}`,
+  //       },
+  //     });
 
-      if (response.status === 200) {
-        setExpenses(response.data.expenses);
-      }
-    } catch (error) {
-      console.error("Error fetching expenditures:", error);
-      if (error.response && error.response.data) {
-        toast.error(JSON.stringify(error.response.data));
-      } else {
-        toast.error('An unknown error occurred');
-      }
-    }
-  };
+  //     if (response.status === 200) {
+  //       setExpenses(response.data.expenses);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching expenditures:", error);
+  //     if (error.response && error.response.data) {
+  //       toast.error(JSON.stringify(error.response.data));
+  //     } else {
+  //       toast.error('An unknown error occurred');
+  //     }
+  //   }
+  // };
 
   useEffect(() => {
-    fetchExpenditures();
+    // fetchExpenditures();
 
     let token = localStorage.getItem('token');
     if (!token) {
@@ -82,7 +82,7 @@ const Expenditure = () => {
     let data = { description, amount };
 
     try {
-      const response = await axios.post('http://localhost:3000/expenditure', data, {
+      const response = await axios.post('http://localhost:3000/donation', data, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -139,7 +139,7 @@ const Expenditure = () => {
               <input
                 type="submit"
                 aria-label="Se connecter"
-                value="DEPENSER"
+                value="DONNER"
               />
             </div>
           </form>
@@ -153,19 +153,17 @@ const Expenditure = () => {
                   <th scope="col" className="px-6 py-3">Description</th>
                   <th scope="col" className="px-6 py-3">Date</th>
                   <th scope="col" className="px-6 py-3">Amount</th>
-                  <th scope="col" className="px-6 py-3">Initiator</th>
                 </tr>
               </thead>
-              <tbody>
+              {/* <tbody>
                 {expenses.map((expense, index) => (
                   <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td className="px-6 py-4">{expense.description}</td>
                     <td className="px-6 py-4">{new Date(expense.createdAt).toLocaleDateString()}</td>
                     <td className="px-6 py-4">{expense.amount}</td>
-                    <td className="px-6 py-4">{expense.user.name}</td>
                   </tr>
                 ))}
-              </tbody>
+              </tbody> */}
             </table>
           </div>
         </div>
@@ -174,4 +172,4 @@ const Expenditure = () => {
   );
 };
 
-export default Expenditure;
+export default Donation;

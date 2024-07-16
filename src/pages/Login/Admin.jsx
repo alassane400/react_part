@@ -71,6 +71,8 @@ const LogInAdmin = () => {
                 setPassword("");
                 toast.success("Enregistré");
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('status', response.data.admin.status.description);
+                localStorage.setItem('name', response.data.admin.name);
                 setTimeout(() => {
                     navigate("/home");
                 }, 3000);

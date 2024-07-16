@@ -16,7 +16,7 @@ const Round = () => {
   const handleRoundRegister = async () => {
     const voteId = parseInt(localStorage.getItem("voteId"), 10);
     if (isNaN(voteId)) {
-      console.error("Invalid voteId retrieved from localStorage");
+      console.error("Invalid vote");
       return;
     }
 
@@ -27,20 +27,20 @@ const Round = () => {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       if (response.status === 200 || response.status === 201) {
-        toast.success(response.data);
+        toast.success("Round successfully create");
         localStorage.setItem('roundId', response.data.id);
       } else {
-        toast.error(`Unexpected response code: ${response.status}`);
+        toast.error("Failed to create round. Please try again.");
       }
     } catch (error) {
-      toast.error(`Error: ${error.response ? error.response.data : error.message}`);
+      toast.error("Failed to create round. Please try again.");
     }
   };
 
   const handlePropositionRegister = async () => {
     const roundId = parseInt(localStorage.getItem("roundId"), 10);
     if (isNaN(roundId)) {
-      console.error("Invalid voteId retrieved from localStorage");
+      console.error("Invalid vote");
       return;
     }
 
@@ -56,7 +56,7 @@ const Round = () => {
         toast.error(`Unexpected response code: ${response.status}`);
       }
     } catch (error) {
-      toast.error(`Error: ${error.response ? error.response.data : error.message}`);
+      toast.error("Failed to create Round. Please try again.");
     }
   };
 

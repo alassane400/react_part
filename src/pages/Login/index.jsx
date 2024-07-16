@@ -62,12 +62,14 @@ const LogIn = () => {
     axios.request(config)
         .then((response) => {
             if (response.status === 200) {
-                // console.log(response.data);
+                // console.log(response.data.other);
                 // console.log(response.data.token);
                 setEmail("");
                 setPassword("");
                 toast.success("Connected");
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('status', response.data.other.status.description);
+                localStorage.setItem('name', response.data.other.name);
                 setTimeout(() => {
                     navigate("/home");
                 }, 3000);

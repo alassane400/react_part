@@ -25,6 +25,7 @@ import Expenditure from './pages/Expenditure/index.jsx';
 import Payment from "./pages/Payment";
 import Admin_file from "./pages/Admin_file";
 import Admin_home from "./pages/Admin_home";
+import Donation from './pages/Donation/index.jsx';
 
 const HeaderLayout = () => {
   return (
@@ -67,17 +68,29 @@ function App() {
         <Routes>
           <Route path="/" element={<LogIn />} />
           <Route path="/SignUp" element={<SignUp />} />
+
+
           <Route path="/Benefactor" element={<LogInBenefactor />} />
           <Route path="/Benefactor/SignUp" element={<SignUpBenefactor />} />
+
+
           <Route path="/Admin" element={<LogInAdmin />} />
           <Route path="/Admin/SignUp" element={<SignUpAdmin />} />
+
           <Route element={<HeaderLayout />}>
             <Route path="/Expenditure" element={<Expenditure />} />
+            <Route path="/Donation" element={<Donation />} />
+
+
             <Route path="/Document" element={<Document />} />
+
             <Route path="/home" element={<Home />} />
+
             <Route path="/admin/vote" element={<Vote />} />
             <Route path="/vote" element={<Votee />} />
+
             <Route path="/payment" element={<Payment/>}/>
+
             <Route path="/admin_home" element={<Admin_home/>}/>
             <Route path="/admin_file" element={<Admin_file/>}/>
           </Route>

@@ -15,6 +15,10 @@ const Votee = () => {
   const [selectedChoices, setSelectedChoices] = useState({});
 
   useEffect(() => {
+    let token=localStorage.getItem("token");
+    if(!token){
+      Navigate("/")
+    }
     const fetchVotes = async () => {
       try {
         const response = await axios.get("http://localhost:3000/votes", {

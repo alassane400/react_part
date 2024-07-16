@@ -11,6 +11,9 @@ const SignUp = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    if (token) {
+      navigate("/home");
+    }
     let timeout;
     if (index < text.length) {
       timeout = setTimeout(() => {

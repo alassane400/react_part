@@ -82,6 +82,8 @@ const LogInBenefactor = () => {
 // <<<<<<< HEAD:src/pages/Login/Benefactor.jsx
                 toast.success("Enregistré");
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('status', response.data.other.status.description);
+                localStorage.setItem('name', response.data.other.name);
 // =======
                 // toast.success("Connecté");
                 // let user={
