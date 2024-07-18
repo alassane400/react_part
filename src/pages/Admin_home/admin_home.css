@@ -41,6 +41,10 @@
   font-size: 24px;
 }
 
+.first-t {
+  width: 40px !important;
+}
+
 .admin-card-mid{
   font-size: 64px;
   color:black;
@@ -118,7 +122,6 @@
 .btn-reminder{}
 
 .expense{
-
 }
 
 .expense-sup{}

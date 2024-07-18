@@ -59,6 +59,5 @@ const Admin_file = () => {
       </div>
     </div>
   )
-}
-
+ }
 export default Admin_file
