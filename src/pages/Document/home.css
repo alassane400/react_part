@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .today{
   width: 96%;
   height: 10vh;
@@ -131,45 +134,4 @@ input[type=checkbox]{
   display:flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-}
-
-/* home.css */
-
-.home-content {
-  padding: 20px;
-}
-
-.today {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.today-text {
-  color: #333;
-}
-
-.home-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative; /* Ensure relative positioning for child elements */
-}
-
-.toggle-chatbot-image {
-  width: 50px; /* Adjust the size as needed */
-  height: 50px;
-  cursor: pointer;
-  position: fixed;
-  bottom: 20px; /* Adjust the distance from the bottom */
-  right: 20px; /* Adjust the distance from the right */
-  z-index: 1000; /* Ensure it appears above other elements */
-}
-
-.chatbot-container {
-  width: 100%;
-  max-width: 600px;
-  position: fixed;
-  bottom: 80px; /* Adjust the distance to place it above the toggle image */
-  right: 20px; /* Align it with the toggle image */
-  z-index: 999; /* Ensure it appears above other elements but below the toggle image */
 }

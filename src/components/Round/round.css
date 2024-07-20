@@ -51,13 +51,15 @@
 }
 
 .drop-btn {
-  margin-right: 80px;
+  margin-left:250%;
   width: 140px;
-  height: 62px;
+  height: 52px;
   justify-content: center;
   align-items: center;
   display: flex;
   border-radius: 10px;
+  border-color: black;
+  border-width: 1px;
   background-color: #f39713;
 }
 

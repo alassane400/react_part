@@ -1,21 +1,19 @@
-import { useEffect, useState, useContext } from "react"
-import "./signin.css"
-import logo from "/image/logo.png"
+import { useEffect, useState } from "react";
+import "./signin.css";
+import logo from "/image/logo.png";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
-import UserContext from "../../context/userProvider";
 
-
-
-const SignIn = () => {
-  const { setLogged, setUserData, setToken } = useContext(UserContext);
-
-  const text="Companion"
+const SignUp = () => {
+  const text = "Companion";
   const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    if (token) {
+      navigate("/home");
+    }
     let timeout;
     if (index < text.length) {
       timeout = setTimeout(() => {
@@ -33,23 +31,23 @@ const SignIn = () => {
     return () => clearTimeout(timeout); // Cleanup timeout on component unmount or before the next run
   }, [index, text]);
 
-  const [email, setEmail]=useState("")
-
-  const [password, setPassword]=useState("")
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
   const VITE_URL_API = import.meta.env.VITE_URL_API;
 
-    let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let data = { email, password }
+    let data = { email, password , name}
     data = JSON.stringify(data);
 
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `${VITE_URL_API}/login`,
+        url: `http://localhost:3000/signup`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -59,18 +57,11 @@ const SignIn = () => {
     axios.request(config)
         .then((response) => {
             if (response.status === 200) {
-                console.log("Response succeeded!");
+                console.log(response.data);
                 setEmail("");
+                setName("");
                 setPassword("");
-                toast.success("Connecté");
-                let user={
-                  email:response.data.other.email,
-                  name:response.data.other.name,
-                  description:response.data.other.description
-                }
-                setUserData(user);
-                setToken(response.data.token);
-                console.log(response);
+                toast.success("Enregistré");
                 setTimeout(() => {
                     navigate("/");
                 }, 3000);
@@ -80,9 +71,8 @@ const SignIn = () => {
             const errorMessage = error.response?.data?.message ||
             'An error occurred';
             toast.error(errorMessage);
-        }
-        )
-}
+        });
+  }
 
   return (
     <div className="container signin row">
@@ -95,7 +85,7 @@ const SignIn = () => {
       </div>
       </div>
       <div className="signin-right col">
-      <h1 className="signin-right-title">Connection</h1>
+      <h1 className="signin-right-title">Registration</h1>
 
       <form className="formGroup" onSubmit={handleSubmit}>
                 <div className="inputGroup">
@@ -128,11 +118,26 @@ const SignIn = () => {
                         required="required"
                     />
                 </div>
+                <div className="inputGroup">
+                    <label className="form-label mt-4" htmlFor="name">Name</label>
+                    <input
+                        id="name"
+                        aria-label="Enter Name"
+                        className="form-control"
+                        type="text"
+                        name="name"
+                        placeholder="Enter Name"
+                        onChange={(e) => {
+                            setName(e.target.value);
+                        }}
+                        required="required"
+                    />
+                </div>
                 <div className="form-footer">
                     <input
                         className="submitButton"
                         type="submit"
-                        aria-label="Se connecter" />
+                        aria-label="Register" />
                 </div>
             </form >
       </div>
@@ -140,4 +145,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignUp;
