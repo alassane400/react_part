@@ -23,7 +23,7 @@ const Round = () => {
     const roundData = { description, starting, ending, voteId };
 
     try {
-      const response = await axios.post("http://localhost:3000/round", roundData, {
+      const response = await axios.post("https://projet-annuel-q1r6.onrender.com/round", roundData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       if (response.status === 200 || response.status === 201) {
@@ -47,7 +47,7 @@ const Round = () => {
     const propoData = { description: proposition, roundId };
 
     try {
-      const response = await axios.post("http://localhost:3000/proposition", propoData, {
+      const response = await axios.post("https://projet-annuel-q1r6.onrender.com/proposition", propoData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       if (response.status === 200 || response.status === 201 || response.status === 204) {
