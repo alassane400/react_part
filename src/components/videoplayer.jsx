@@ -10,11 +10,11 @@ export const VideoPlayer = ({ user }) => {
   }, [user]);
 
   return (
-    <div>
+    <div style={{borderColor:"orange",margin:"10px"}}>
       Uid: {user.uid}
       <div
         ref={ref}
-        style={{ width: '200px', height: '200px', backgroundColor: '#000' }}
+        style={{ width: '200px', height: '200px', backgroundColor: '#000',borderColor:"orange",margin:"10px" }}
       ></div>
     </div>
   );

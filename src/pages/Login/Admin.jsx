@@ -55,7 +55,7 @@ const LogInAdmin = () => {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `http://localhost:3000/admin/login`,
+        url: `https://projet-annuel-q1r6.onrender.com/admin/login`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -73,6 +73,7 @@ const LogInAdmin = () => {
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('status', response.data.admin.status.description);
                 localStorage.setItem('name', response.data.admin.name);
+                localStorage.setItem('id', response.data.admin.id);
                 setTimeout(() => {
                     navigate("/home");
                 }, 3000);

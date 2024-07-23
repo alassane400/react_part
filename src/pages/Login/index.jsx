@@ -52,7 +52,7 @@ const LogIn = () => {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: API_URL + "/login",
+        url: `https://projet-annuel-q1r6.onrender.com/login`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -70,6 +70,7 @@ const LogIn = () => {
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('status', response.data.other.status.description);
                 localStorage.setItem('name', response.data.other.name);
+                localStorage.setItem('id', response.data.other.id);
                 setTimeout(() => {
                     navigate("/home");
                 }, 3000);

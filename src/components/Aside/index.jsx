@@ -1,8 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./aside.css";
 
 const Aside = () => {
   const status = localStorage.getItem('status');
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('status');
+    localStorage.removeItem('name');
+    localStorage.removeItem('token');
+    navigate("/"); // Redirige l'utilisateur vers la page d'accueil après la déconnexion
+  };
 
   return (
     <div className="aside">
@@ -19,19 +27,19 @@ const Aside = () => {
         <div className="aside-center"><img src="https://cdn-icons-png.flaticon.com/128/3179/3179218.png" alt="vote" /></div>
       </NavLink>
 
-      {status == 'ADMIN' && (
+      {status === 'ADMIN' && (
         <NavLink to="/expenditure" className={({ isActive }) => isActive ? "active" : ""}>
           <div className="aside-center"><img src="image/logo-resources.png" alt="resources" /></div>
         </NavLink>
       )}
 
-      {status == 'BENEFACTOR' && (
+      {status === 'BENEFACTOR' && (
         <NavLink to="/donation" className={({ isActive }) => isActive ? "active" : ""}>
           <div className="aside-center"><img src="image/logo-resources.png" alt="resources" /></div>
         </NavLink>
       )}
 
-      <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
+      <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLogout}>
         <div className="aside-logout"><img src="image/logo-exit.png" alt="logout" /></div>
       </NavLink>
     </div>
