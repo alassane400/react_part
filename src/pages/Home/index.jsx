@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import './home.css';
 import getdate from "../../utils/getDate.js";
 import Chatbot from "react-chatbot-kit";
@@ -8,11 +8,13 @@ import ActionProvider from "../../chatbot/ActionProvider.js";
 import 'react-chatbot-kit/build/main.css';
 import companionnChatBot from './companionnChatBot.png';
 import { VideoRoom } from "../../components/videoroom.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [today, setToday] = useState('');
   const [showChatbot, setShowChatbot] = useState(false);
   const [joined, setJoined] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -32,8 +34,8 @@ const Home = () => {
         <p className="today-text">{today}</p>
       </div>
       <div className="home-body">
-        <img 
-          src={companionnChatBot} 
+        <img
+          src={companionnChatBot}
           alt="Toggle Chatbot"
           className="toggle-chatbot-image"
           onClick={toggleChatbot}
@@ -70,7 +72,7 @@ const Home = () => {
               starting
               ending
               quorum
-              location: possibilite de selectionner dans une liste ou d'ajouter une nouvelle location / e-meeting
+              location: possibilite de selectionner dans une liste ou d&apos;ajouter une nouvelle location / e-meeting
               Ordre du jour
               selection des personnes prioritairement conviees( celles entrant dans le decompte pour le quorum )
             </div>

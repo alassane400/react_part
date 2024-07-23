@@ -9,7 +9,7 @@ const SignUp = () => {
   const text = "Companion";
   const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
-
+  let token = localStorage.getItem('token');
   useEffect(() => {
     if (token) {
       navigate("/home");
@@ -35,7 +35,7 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const VITE_URL_API = import.meta.env.VITE_URL_API;
+  const API_URL = import.meta.env.VITE_URL_API;
 
   let navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const SignUp = () => {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `http://localhost:3000/signup`,
+        url: API_URL + `/signup`,
         headers: {
             'Content-Type': 'application/json'
         },

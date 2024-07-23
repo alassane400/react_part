@@ -6,16 +6,6 @@ const Aside = () => {
 
   return (
     <div className="aside">
-// <<<<<<< react-brad
-//       <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
-//         <div className="aside-logo"><img src="image/logo.png" alt="logo" /></div>
-// =======
-//     <NavLink to="/home" className={({ isActive }) =>
-//     isActive ? "active" : ""
-//     }>
-//     <div className="aside-logo"><img src="image/logo.png" alt="logo" /></div>
-// >>>>>>> master
-      </NavLink>
 
       <NavLink to="/document" className={({ isActive }) => isActive ? "active" : ""}>
         <div className="aside-center"><img src="image/logo-doc.png" alt="doc" /></div>
