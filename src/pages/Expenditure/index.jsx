@@ -23,7 +23,7 @@ const Expenditure = () => {
     }
 
     try {
-      const response = await axios.get('http://localhost:3000/expenditures', {
+      const response = await axios.get('https://projet-annuel-q1r6.onrender.com/expenditures', {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -82,7 +82,7 @@ const Expenditure = () => {
     let data = { description, amount };
 
     try {
-      const response = await axios.post('http://localhost:3000/expenditure', data, {
+      const response = await axios.post('https://projet-annuel-q1r6.onrender.com/expenditure', data, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,

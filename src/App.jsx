@@ -26,6 +26,8 @@ import Payment from "./pages/Payment";
 import Admin_file from "./pages/Admin_file";
 import Admin_home from "./pages/Admin_home";
 import Donation from './pages/Donation/index.jsx';
+import EditUser from './pages/Edit_user/index.jsx';
+import NotificationTable from './pages/Invitation/invitation.jsx';
 
 const HeaderLayout = () => {
   return (
@@ -93,6 +95,9 @@ function App() {
 
             <Route path="/admin_home" element={<Admin_home/>}/>
             <Route path="/admin_file" element={<Admin_file/>}/>
+
+            <Route path="/edit_user" element={<EditUser/>}/>
+            <Route path="/notifications" element={<NotificationTable/>}/>
           </Route>
         </Routes>
         <ToastContainer
