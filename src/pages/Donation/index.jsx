@@ -56,15 +56,15 @@ const Donation = () => {
       timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + text.charAt(index));
         setIndex(index + 1);
-      }, 300); 
+      }, 300);
     } else {
       timeout = setTimeout(() => {
         setDisplayedText('');
         setIndex(0);
-      }, 3000); 
+      }, 3000);
     }
 
-    return () => clearTimeout(timeout); 
+    return () => clearTimeout(timeout);
   }, [index, text, navigate]);
 
   useEffect(() => {

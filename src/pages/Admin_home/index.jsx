@@ -67,8 +67,7 @@ const Admin_home = () => {
           <table>
             <thead>
               <tr>
-                <th>
-
+                <th className='first-t'>
                 </th>
                 <th>
                   Contributor
@@ -86,14 +85,14 @@ const Admin_home = () => {
             </thead>
             <tbody>
               <tr>
-                <td></td>
+                <td className='first-t'>1</td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td></td>
+                <td className='first-t'>2</td>
                 <td></td>
                 <td></td>
                 <td></td>

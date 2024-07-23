@@ -39,7 +39,7 @@ const LogIn = () => {
 
   const [password, setPassword]=useState("")
 
-  const VITE_URL_API = import.meta.env.VITE_URL_API;
+  const API_URL = import.meta.env.VITE_URL_API;
   // const LOCALHOST_API=import.meta.env.LOCALHOST_API;
 
   let navigate = useNavigate();

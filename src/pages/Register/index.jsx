@@ -9,7 +9,7 @@ const SignUp = () => {
   const text = "Companion";
   const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
-
+  let token = localStorage.getItem('token');
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -36,7 +36,7 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const VITE_URL_API = import.meta.env.VITE_URL_API;
+  const API_URL = import.meta.env.VITE_URL_API;
 
   let navigate = useNavigate();
 

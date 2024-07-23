@@ -1,0 +1,31 @@
+.gestion-body{}
+
+.gestion-body-sup, .gestion-body-inf{
+  width: 96%;
+  height: 283px;
+  margin: 20px auto;
+  border:1px solid black;
+  border-radius: 10px;
+}
+.gestion-body-sup th, .gestion-body-sup td, .gestion-body-inf th, .gestion-body-inf td{
+  width: 24%;
+  text-align: center;
+  height: 40px;
+  margin: 40px 0;
+}
+
+.gestion-body-sup table, .gestion-body-inf table{
+  width:100%;
+}
+
+.number_raw_1{}
+
+.gestion-body-inf{}
+
+.first-t {
+  width: 40px !important;
+}
+
+.gestion-body-sup tr, .gestion-body-inf tr{
+  height: 80px;
+}

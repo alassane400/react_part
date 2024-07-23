@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./vote.css";
@@ -6,7 +6,7 @@ import Round from "../../components/Round/index.jsx";
 import axios from "axios";
 
 const Vote = () => {
-  const [theme, setTheme] = useState("");
+  //const [theme, setTheme] = useState("");
   const [starting, setStarting] = useState("");
   const [ending, setEnding] = useState("");
   const [rounds, setRound] = useState(1);

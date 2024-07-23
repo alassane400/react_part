@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import './home.css';
 import getdate from "../../utils/getDate.js";
 import Chatbot from "react-chatbot-kit";
@@ -9,6 +9,7 @@ import 'react-chatbot-kit/build/main.css';
 import companionnChatBot from './companionnChatBot.png';
 import { VideoRoom } from "../../components/videoroom.jsx";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [today, setToday] = useState('');
@@ -16,6 +17,7 @@ const Home = () => {
   const [joined, setJoined] = useState(false);
   const [users, setUsers] = useState([]); // State to store users
   const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
 
   const fetchEvents = async () => {
     let token = localStorage.getItem('token');
@@ -155,8 +157,8 @@ const Home = () => {
         <p className="today-text">{today}</p>
       </div>
       <div className="home-body">
-        <img 
-          src={companionnChatBot} 
+        <img
+          src={companionnChatBot}
           alt="Toggle Chatbot"
           className="toggle-chatbot-image"
           onClick={toggleChatbot}
@@ -363,6 +365,7 @@ const Home = () => {
               </tbody>
             </table>
           </div>
+
           </div>
         </div>
       </div>

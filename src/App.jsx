@@ -1,5 +1,3 @@
-// <<<<<<< HEAD
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
@@ -28,6 +26,12 @@ import Admin_home from "./pages/Admin_home";
 import Donation from './pages/Donation/index.jsx';
 import EditUser from './pages/Edit_user/index.jsx';
 import NotificationTable from './pages/Invitation/invitation.jsx';
+import Admin_membergestion from "./pages/Admin_membergestion";
+import Planning from "./pages/Planning";
+import MyCalendar from "./pages/MyCalendar";
+import Notification from "./pages/Notifications";
+import Result from "./pages/Result";
+
 
 const HeaderLayout = () => {
   return (
@@ -43,28 +47,11 @@ const HeaderLayout = () => {
     </div>
   );
 };
-// =======
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { Outlet } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "./App.css";
-// import Home from "./pages/Home";
-// import Vote from "./pages/Vote";
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
-// import SignIn from "./pages/SignIn";
-// import Aside from "./components/Aside";
-// import { ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import Result from "./pages/Result";
-// import { UserProvider } from "./context/userProvider";
-
-// >>>>>>> c994e0a0bc76902fcc13ec9e20dec62fc4b4b2ba
 
 function App() {
   return (
     <Router>
-{/* // <<<<<<< HEAD */}
+
       <div className="App">
         <ChatbotComponent />
         <Routes>
@@ -96,48 +83,30 @@ function App() {
             <Route path="/admin_home" element={<Admin_home/>}/>
             <Route path="/admin_file" element={<Admin_file/>}/>
 
+
             <Route path="/edit_user" element={<EditUser/>}/>
             <Route path="/notifications" element={<NotificationTable/>}/>
+            <Route path="/home" element={<Home />} />
+            <Route path="/result" element={<Result/>}/>
+            <Route path="/admin_membergestion" element={<Admin_membergestion/>}/>
+            <Route path="/planning" element={<Planning/>}/>
+//             <Route path="/edit_user" element={<Edit_user/>}/>
+            <Route path="/mycalendar" element={<MyCalendar/>}/>
+//             <Route path="/notification" element={<Notification/>}/>
           </Route>
-        </Routes>
-        <ToastContainer
-          position="top-center"
-          autoClose={1000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
-      </div>
-{/* // =======
-//       <UserProvider>
-//       <Routes>
-//         <Route path="/" element={<SignIn />} />
-//         <Route element={<HeaderLayout />}>
-//           <Route path="/home" element={<Home />} />
-//           <Route path="/vote" element={<Vote />} />
-//           <Route path="/result" element={<Result/>}/>
-//           <Route path="/payment" element={<Payment/>}/>
-//           <Route path="/admin_home" element={<Admin_home/>}/>
-//           <Route path="/admin_file" element={<Admin_file/>}/>
-//         </Route>
-//       </Routes>
-//       </UserProvider>
-//       <ToastContainer
-//         position="top-center"
-//         autoClose={1000}
-//         hideProgressBar={false}
-//         newestOnTop={false}
-//         closeOnClick
-//         rtl={false}
-//         pauseOnFocusLoss
-//         draggable
-//         pauseOnHover
-//       />
-// >>>>>>> c994e0a0bc76902fcc13ec9e20dec62fc4b4b2ba */}
+      </Routes>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </div>
     </Router>
   );
 }

@@ -1,66 +1,3 @@
-import { useEffect, useState } from "react";
-import "./edit_user.css";
-import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-
-const EditUser = () => {
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
-  const [status, setStatus] = useState(""); // Assuming 'status' should be used for something
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [actual_password,setApassword]=useState("");
-  const [skills, setSkills] = useState("");
-
-  let navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    setName(localStorage.getItem('name') || "");
-    setEmail(localStorage.getItem('email') || "");
-    setId(localStorage.getItem('id') || "");
-  }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!id) {
-      console.error("User ID is missing");
-      return;
-    }
-
-    const token = localStorage.getItem('token');
-    const data = {
-      name,
-      email,
-      password,
-      actual_password
-    };
-
-    const config = {
-      method: "patch",
-      url: `https://projet-annuel-q1r6.onrender.com/admins/${id}`,
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      },
-      data: JSON.stringify(data)
-    };
-
-    axios
-      .request(config)
-      .then(() => {
-        localStorage.setItem('name', name);
-        localStorage.setItem('email', email);
-        localStorage.setItem('skills', skills);
-
-        navigate('/');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   return (
     <div className="container row edit-wrap">
       <div className="profile-left">
@@ -146,3 +83,4 @@ const EditUser = () => {
 };
 
 export default EditUser;
+

@@ -58,8 +58,6 @@ const Payment = () => {
                 <div className="account-iban">
                   <div className="account-iban-sup">
                     <p>Your new IBAN : </p>
-                  </div>
-                  <div className="drop-file">
                     <button className ="drop-file-btn"> Drop it </button>
                   </div>
                   <div className="account-iban-inf">
