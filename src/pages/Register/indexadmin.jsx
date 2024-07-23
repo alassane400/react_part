@@ -45,7 +45,7 @@ const SignUpAdmin = () => {const text = "Companion";
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `http://localhost:3000/admin/signup`,
+        url: `https://projet-annuel-q1r6.onrender.com/admin/signup`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -54,7 +54,7 @@ const SignUpAdmin = () => {const text = "Companion";
 
     axios.request(config)
         .then((response) => {
-            if (response.status === 200) {
+            if (response.status >=200 && response.status <300 ) {
                 console.log(response.data);
                 setEmail("");
                 setName("");

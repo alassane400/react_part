@@ -1,35 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import AgoraRTC from 'agora-rtc-sdk-ng';
-import { VideoPlayer } from './videoplayer';
 
 const APP_ID = '28a1911ae25f49c18d7b39bb4a495468';
-const TOKEN = '007eJxTYDj4hfvCKrOHUR7W7L+79Mq3KZ8w2d8iktt8Xyry25yNOvsUGIwsEg0tDQ0TU41M00wskw0tUsyTjC2TkkwSTSxNTcwsemqnpjUEMjJYJjIxMEIhiM/J4JyfW5CYl5mfx8AAAOuRIJk=';
-const CHANNEL = 'Companion';
+const CHANNEL = 'Companion'; // Vous pouvez rendre ce canal dynamique si nécessaire
 
-const client = AgoraRTC.createClient({
-  mode: 'rtc',
-  codec: 'vp8',
-});
+const fetchToken = async (channelName, uid) => {
+  const response = await fetch(`http://localhost:3001/rtc-token?channelName=${channelName}&uid=${uid}`);
+  const data = await response.json();
+  return data.token;
+};
 
 export const VideoRoom = () => {
   const [users, setUsers] = useState([]);
   const [localTracks, setLocalTracks] = useState([]);
   const [joined, setJoined] = useState(false);
+  const client = useRef(null);
 
   useEffect(() => {
     const joinChannel = async () => {
-      client.on('user-published', handleUserJoined);
-      client.on('user-unpublished', handleUserUnpublished);
-      client.on('user-left', handleUserLeft);
+      client.current = AgoraRTC.createClient({
+        mode: 'rtc',
+        codec: 'vp8',
+      });
+
+      client.current.on('user-published', handleUserJoined);
+      client.current.on('user-unpublished', handleUserUnpublished);
+      client.current.on('user-left', handleUserLeft);
 
       try {
         const uid = Math.floor(Math.random() * 1000000);
-        await client.join(APP_ID, CHANNEL, TOKEN, uid);
+        const token = await fetchToken(CHANNEL, uid);
+
+        await client.current.join(APP_ID, CHANNEL, token, uid);
 
         const [audioTrack, videoTrack] = await AgoraRTC.createMicrophoneAndCameraTracks();
         setLocalTracks([audioTrack, videoTrack]);
 
-        await client.publish([audioTrack, videoTrack]);
+        await client.current.publish([audioTrack, videoTrack]);
 
         setUsers((prevUsers) => [
           ...prevUsers,
@@ -37,6 +44,11 @@ export const VideoRoom = () => {
         ]);
 
         setJoined(true);
+
+        // Log the participation link
+        const participationLink = `https://your-meeting-platform.com/join?channel=${CHANNEL}&uid=${uid}`;
+        console.log("Join the meeting using this link: ", participationLink);
+
       } catch (error) {
         console.error('Failed to join channel:', error);
       }
@@ -49,15 +61,17 @@ export const VideoRoom = () => {
         track.stop();
         track.close();
       });
-      client.unpublish(localTracks).then(() => client.leave());
-      client.off('user-published', handleUserJoined);
-      client.off('user-unpublished', handleUserUnpublished);
-      client.off('user-left', handleUserLeft);
+      if (client.current) {
+        client.current.unpublish(localTracks).then(() => client.current.leave());
+        client.current.off('user-published', handleUserJoined);
+        client.current.off('user-unpublished', handleUserUnpublished);
+        client.current.off('user-left', handleUserLeft);
+      }
     };
-  }, []);
+  }, [localTracks]);
 
   const handleUserJoined = async (user, mediaType) => {
-    await client.subscribe(user, mediaType);
+    await client.current.subscribe(user, mediaType);
 
     if (mediaType === 'video') {
       setUsers((prevUsers) => [...prevUsers, user]);
@@ -89,6 +103,26 @@ export const VideoRoom = () => {
           <VideoPlayer key={user.uid} user={user} />
         ))}
       </div>
+    </div>
+  );
+};
+
+export const VideoPlayer = ({ user }) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    if (user.videoTrack && ref.current) {
+      user.videoTrack.play(ref.current);
+    }
+  }, [user]);
+
+  return (
+    <div>
+      Uid: {user.uid}
+      <div
+        ref={ref}
+        style={{ width: '200px', height: '200px', backgroundColor: '#000' }}
+      ></div>
     </div>
   );
 };

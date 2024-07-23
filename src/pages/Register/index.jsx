@@ -11,6 +11,7 @@ const SignUp = () => {
   const [index, setIndex] = useState(0);
   let token = localStorage.getItem('token');
   useEffect(() => {
+    const token = localStorage.getItem('token');
     if (token) {
       navigate("/home");
     }
@@ -47,7 +48,7 @@ const SignUp = () => {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: API_URL + `/signup`,
+        url: `https://projet-annuel-q1r6.onrender.com/signup`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -56,7 +57,7 @@ const SignUp = () => {
 
     axios.request(config)
         .then((response) => {
-            if (response.status === 200) {
+            if (response.status >= 200 && response.status < 300) {
                 console.log(response.data);
                 setEmail("");
                 setName("");
