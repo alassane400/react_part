@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 const EditUser = () => {
   const [id, setId] = useState("");
   const [name, setName] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState(""); // Assuming 'status' should be used for something
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [actual_password, setApassword] = useState("");
+  const [actual_password,setApassword]=useState("");
   const [skills, setSkills] = useState("");
 
   let navigate = useNavigate();

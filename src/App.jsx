@@ -76,7 +76,7 @@ function App() {
 
             <Route path="/home" element={<Home />} />
 
-            <Route path="/admin/vote" element={<Vote />} />
+            <Route path="/admin_vote" element={<Vote />} />
             <Route path="/vote" element={<Votee />} />
 
             <Route path="/payment" element={<Payment/>}/>
@@ -92,9 +92,9 @@ function App() {
             <Route path="/result" element={<Result/>}/>
             <Route path="/admin_membergestion" element={<Admin_membergestion/>}/>
             <Route path="/planning" element={<Planning/>}/>
-//             <Route path="/edit_user" element={<Edit_user/>}/>
+{/* //             <Route path="/edit_user" element={<Edit_user/>}/> */}
             <Route path="/mycalendar" element={<MyCalendar/>}/>
-//             <Route path="/notification" element={<Notification/>}/>
+{/* //             <Route path="/notification" element={<Notification/>}/> */}
           </Route>
       </Routes>
       <ToastContainer

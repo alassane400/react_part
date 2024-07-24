@@ -4,7 +4,7 @@ import axios from 'axios';
 // Composant NotificationTable
 const NotificationTable = () => {
   const [notifications, setNotifications] = useState([]);
-  const userId = localStorage.getItem('userId'); // Récupération de l'userId depuis localStorage
+  const userId = localStorage.getItem('id'); // Récupération de l'userId depuis localStorage
 
   useEffect(() => {
     // Fonction pour charger les notifications

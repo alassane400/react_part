@@ -14,25 +14,36 @@ class ActionProvider {
     this.createCustomMessage = createCustomMessage;
   }
 
-  // Custom function to greet the user
   greet = () => {
     const message = this.createChatBotMessage("Hello! How can I assist you today?");
     this.setChatbotMessage(message);
   }
 
-  // Custom function to describe Companion
   describeCompanion = () => {
-    const message = this.createChatBotMessage("Description Companion");
+    const message = this.createChatBotMessage("Ensemble Autrement est une association de loi 1901 qui accompagne des personnes en situation de handicap psychique. Nous offrons des services dans trois domaines : Aide à domicile, Vie sociale, et Habitat.");
     this.setChatbotMessage(message);
   }
 
-  // Custom function to list Companion functionalities
   listCompanionFunctionalities = () => {
-    const message = this.createChatBotMessage("Fonctionnalites Companion");
+    const message = this.createChatBotMessage("Nos missions incluent la construction de projets individualisés, des animations collectives, des solutions d'habitat adapté et la gestion des votes et sondages.");
     this.setChatbotMessage(message);
   }
 
-  // Function to update the chatbot state
+  handleEventManagement = () => {
+    const message = this.createChatBotMessage("Vous pouvez consulter la liste des événements, y participer et gérer les tâches associées.");
+    this.setChatbotMessage(message);
+  }
+
+  handleVoteAndConsultation = () => {
+    const message = this.createChatBotMessage("Nous organisons des votes et des sondages. Les résultats sont analysés et stockés dans notre base de données.");
+    this.setChatbotMessage(message);
+  }
+
+  handleGED = () => {
+    const message = this.createChatBotMessage("Notre système GED permet de stocker les documents de manière sécurisée avec chiffrement et sauvegardes régulières.");
+    this.setChatbotMessage(message);
+  }
+
   setChatbotMessage = (message) => {
     this.setState(prevState => ({
       ...prevState,

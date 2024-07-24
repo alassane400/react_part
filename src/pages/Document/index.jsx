@@ -22,7 +22,7 @@ const Document = () => {
     }
     
     try {
-      const response = await axios.get('http://localhost:3000/document', {
+      const response = await axios.get('https://projet-annuel-q1r6.onrender.com/document', {
         headers: {
           'Authorization': `Bearer ${token}`,
         }
@@ -76,7 +76,7 @@ const Document = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:3000/upload', formData, {
+      const response = await axios.post('https://projet-annuel-q1r6.onrender.com:3000/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`,
@@ -104,7 +104,7 @@ const Document = () => {
   };
 
   const handleDownload = (fileId) => {
-    window.open(`http://localhost:3000/download/${fileId}`, 'Download', 'width=600,height=400');
+    window.open(`https://projet-annuel-q1r6.onrender.com/download/${fileId}`, 'Download', 'width=600,height=400');
   };
 
   return (
@@ -112,7 +112,7 @@ const Document = () => {
       <div className="today">
         <p className="today-text">{today}</p>
       </div>
-      <div style={{margin:"25px"}}>
+      <div style={{margin:"35px"}}>
         <div style={{borderColor:'orange', borderWidth:'2px', borderStyle: 'solid', width:'50%', borderRadius:'8px', padding:'10px'}}>
           <form onSubmit={handleSubmit}>
             <label htmlFor="file"><b>Upload :</b></label>
